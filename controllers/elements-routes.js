@@ -1,8 +1,15 @@
-const router = require('express').Router();
-const path = require('path');
+const express = require('express');
+const router = express.Router();
 
-router.get('/', async (req, res) => {
-  res.sendFile(path.join(__dirname, '../views/index.html'));
+// Define route handlers
+router.get('/', (req, res) => {
+  res.send('elements API');
 });
 
+router.get('/element/:id', (req, res) => {
+
+});
+
+
 module.exports = router;
+
