@@ -1,11 +1,15 @@
 const router = require('express').Router();
 
 router.get('/', async (req, res) => {
-  res.render('test');
+  res.render('game');
 });
 
-router.get('/test2', async (req, res) => {
-  res.render('test2');
+router.get('/sign-up', async (req, res) => {
+  res.render('signup');
+});
+
+router.get('/sign-in', async (req, res) => {
+  res.render('signin');
 });
 
 module.exports = router;
