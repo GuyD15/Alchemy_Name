@@ -4,19 +4,17 @@ const sequelize = require('../config/connection');
 class Number extends Model {}
 Number.init(
   {
-    value: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    user_id: {
+    username: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    is_even: {
+    password: {
       type: DataTypes.INTEGER,
-      get() {
-        return this.value % 2 === 0;
-      },
+      allowNull: false,
     },
   },
   {
