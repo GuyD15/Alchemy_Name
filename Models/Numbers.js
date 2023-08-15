@@ -7,12 +7,9 @@ Number.init(
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      primaryKey: true,
     },
-    username: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    password: {
+    highscore: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
