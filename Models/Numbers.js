@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+//Defines a Number class and initializes 'Number' model.
 class Number extends Model {}
 Number.init(
   {
