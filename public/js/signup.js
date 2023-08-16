@@ -1,29 +1,37 @@
 //Handle the signup form submission
-const loginFormHandler = async (event) => {
+const signupFormHandler = async (event) => {
   event.preventDefault();
 
-  const email = document.getElementsByClassName('email1').value.trim();
-  const name = document.getElementsByClassName('name1').value.trim();
-  const password = document.getElementsByClassName('password1').value.trim();
-  const confirmPass = document.getElementsByClassName('email1').value.trim();
+  const username = document.querySelector('#name').value.trim();
+  const email = document.querySelector('#email').value.trim();
+  const password = document.querySelector('#password').value.trim();
+  const confirmPass = document.querySelector('#confirmpass').value.trim();
 
-  // Check for email and password.
-  if (email && password) {
-    // Send POST request
-    const response = await fetch('/api/users/login', {
+  if (password == confirmPass) {
+    signup();
+  } else {
+    alert('Please check your password and try again.')
+  };
+  
+  async function signup() {
+  if (username && email && password) {
+    const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({ email, password, name, confirmPass }),
+      body: JSON.stringify({ username, email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
-      document.location.replace('/sign-up');
+      document.location.replace('/');
     } else {
-      alert('Failed to log in');
+      alert('Failed to sign up.');
     }
   }
+ }
 };
 
 document
   .querySelector('.signup-form')
-  .addEventListener('submit', loginFormHandler);
+  .addEventListener('submit', signupFormHandler);
+
+
