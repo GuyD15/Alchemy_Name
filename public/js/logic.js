@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let totalScore = 0;
 
+  // Displays the draggable numbers when start button is clicked.
   function displayNumbers() {
     for (let i = 1; i <= 10; i++) {
       const number = document.createElement('div');
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       numberContainer.appendChild(number);
 
+      // Allows user to drag numbers
       number.addEventListener('dragstart', (e) => {
         e.dataTransfer.setData('text/plain', e.target.textContent);
       });
@@ -26,14 +28,16 @@ document.addEventListener('DOMContentLoaded', () => {
     displayNumbers();
 
     // Rest of the existing code
-
+    // Allows user to drag number to the dropzone.
     dropZone.addEventListener('dragover', (e) => {
       e.preventDefault();
     });
 
+    //Allows user to drop numbers into drop zone.
     dropZone.addEventListener('drop', (e) => {
       e.preventDefault();
 
+      // Adds draggedNumber value to current score.
       const draggedNumber = e.dataTransfer.getData('text/plain');
       const existingTotal = totalScore;
       totalScore = existingTotal + parseInt(draggedNumber);
