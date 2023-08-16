@@ -40,6 +40,7 @@ hr {
   min-height: 460px;
   padding: 10px 0;
   margin: auto;
+  margin-top: 25%;
   border-radius: 5px;
   border: solid 1px #ccc;
   box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);

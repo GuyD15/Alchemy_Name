@@ -1,18 +1,19 @@
 //Handle the signup form submission
 const signupFormHandler = async (event) => {
   event.preventDefault();
-  
+
   const username = document.querySelector('#name').value.trim();
   const email = document.querySelector('#email').value.trim();
   const password = document.querySelector('#password').value.trim();
   const confirmPass = document.querySelector('#confirmpass').value.trim();
 
-  // if (password == confirmPass) {
-  //   return;
-  // } else {
-  //   alert('Please check your password and try again.')
-  // };
-
+  if (password == confirmPass) {
+    signup();
+  } else {
+    alert('Please check your password and try again.')
+  };
+  
+  async function signup() {
   if (username && email && password) {
     const response = await fetch('/api/users', {
       method: 'POST',
@@ -26,6 +27,7 @@ const signupFormHandler = async (event) => {
       alert('Failed to sign up.');
     }
   }
+ }
 };
 
 document
