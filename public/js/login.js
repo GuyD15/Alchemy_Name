@@ -14,9 +14,10 @@ const loginHandler = async (event) => {
 
     //If login is successful, redirect to the home page.
     if (response.ok) {
+      console.log("test")
       document.location.replace('/');
     } else {
-      alert('Failed to log in');
+      alert('Please check your email or password');
     }
   }
 };

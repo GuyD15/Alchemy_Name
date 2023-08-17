@@ -7,10 +7,20 @@
 </head>
 
 <body>
+    <header>
+    {{#if logged_in}}
+    <nav>
+      <button class="btn" id="logout">logout</button>
+    </nav>
+    {{/if}}
+  </header>
   <div>
     <main>
       {{{ body }}}
     </main>
   </div>
+    {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
 
