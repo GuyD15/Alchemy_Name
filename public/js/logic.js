@@ -36,7 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
       display.textContent = minutes + ":" + seconds;
       if (--timer < 0) {
         clearInterval(timerInterval);
-      }
+        document.body.__x.$data.timeOutNotification = true; // Show time out notification
+    }
     }, 1000);
   }
   function resetRound() {
@@ -53,6 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
     startTimer(60, timerDisplay);
     targetNumber = generateTargetNumber();
     targetDisplay.textContent = "Target: " + targetNumber;
+
+    document.body.__x.$data.exceededNotification = false; 
+    document.body.__x.$data.timeOutNotification = false;
   });
   dropZone.addEventListener('dragover', (e) => {
     e.preventDefault();
@@ -65,9 +69,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (totalScore === targetNumber) {
         currentScore++;
         scoreDisplay.textContent = "Score: " + currentScore;
+
+        
+        document.body.__x.$data.exceededNotification = false; // Hide exceeded target notification
+        document.body.__x.$data.timeOutNotification = false;
+
         resetRound();
     } else if (totalScore > targetNumber) {
-        resetRound(); // If total score exceeds target, reset the round.
+      document.body.__x.$data.exceededNotification = true; // Show exceeded target notification
+      clearInterval(timerInterval);
+      resetRound(); // If total score exceeds target, reset the round.
     }
   });
   resetButton.addEventListener('click', resetRound);
