@@ -1,19 +1,25 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+//Defines a Number class and initializes 'Number' model.
 class Number extends Model {}
 Number.init(
-    {
-        value: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },    
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
     },
-    {
-        sequelize,
-        modelName: 'Number',
-        tableName: 'numbers'
-    }
+    highscore: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+  },
+  {
+    sequelize,
+    modelName: 'Number',
+    tableName: 'numbers',
+  }
 );
 
 module.exports = Number;

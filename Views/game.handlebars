@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  <title>Quick Maffs</title>
+  <h1>Quick Maffs!</h1>
+</head>
+<body x-data="{
+      exceededNotification: false,
+      timeOutNotification: false
+    }">
+  <div id="timer">01:00</div>
+  <button id="start-button">Start Game</button>
+  <div id="number-container" class="number-container"></div>
+  <div id="drop-zone" class="drop-zone">Drop Zone</div>
+  <div id="options-container"></div>
+  <div id="target-number"></div>
+  <div id="score">Score: 0</div>
+
+  <!-- Exceeded target notification -->
+  <div x-show="exceededNotification" class="notification">
+    You've exceeded the target score!
+  </div>
+
+  <!-- Time out notification -->
+  <div x-show="timeOutNotification" class="notification">
+    Time's up!
+  </div>
+
+  <script src="/js/logic.js"></script>
+</body>
+<footer>
+  <button id="reset-button">Reset Game</button>
+  <a href="/sign-up">Sign Up</a>
+  <a href="/sign-in">Login</a>
+</footer>
+</html>

@@ -1,4 +1,4 @@
-CREATE TABLE numbers (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    value INT NOT NULL
-);
+DROP DATABASE IF EXISTS numbers_db;
+CREATE DATABASE numbers_db;
+
+

@@ -4,13 +4,14 @@ Quick Maffs is a web-based game that challenges players to reach a target number
 
 ## Play Online
 
-You can play the game online at [Quick Maffs on Heroku] No installation needed.
+You can play the game online at [Quick Maffs on Heroku]. No installation needed.
 
 ## Local Installation
 
 If you prefer to run the game locally:
 
-1. First, clone this repository:
+1. First, clone this repository: https://github.com/GuyD15/Alchemy_Name.git
+2. Navigate into the project directory and install the necessary dependencies:
 - cd Alchemy_Name
 - npm install
 3. Make sure to create a `.env` file in the root directory and set the following environment variables:
@@ -34,10 +35,8 @@ If you prefer to run the game locally:
 - Express
 - Sequelize
 - Handlebars
-- Express-Session
-- Connect-Session-Sequelize
+- Heroku
 
 ## License
 
 [MIT License](LICENSE)
-
