@@ -44,14 +44,14 @@ document.addEventListener('DOMContentLoaded', () => {
     clearInterval(timerInterval);
     totalScore = 0;
     dropZone.textContent = '0';
-    startTimer(60, timerDisplay);
+    startTimer(20, timerDisplay);
     targetNumber = generateTargetNumber();
     targetDisplay.textContent = "Target: " + targetNumber;
   }
   startButton.addEventListener('click', () => {
     startButton.remove();
     displayNumbers();
-    startTimer(60, timerDisplay);
+    startTimer(20, timerDisplay);
     targetNumber = generateTargetNumber();
     targetDisplay.textContent = "Target: " + targetNumber;
 
