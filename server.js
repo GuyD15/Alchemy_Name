@@ -16,7 +16,7 @@ require('dotenv').config();
 
 if (
   !process.env.DB_USERNAME ||
-  !process.env.DB_PW ||
+  !process.env.DB_PASSWORD ||
   !process.env.DB_NAME
 ) {
   throw new Error(
