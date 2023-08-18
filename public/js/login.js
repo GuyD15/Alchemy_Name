@@ -6,7 +6,7 @@ const loginHandler = async (event) => {
   const password = document.querySelector('#password').value.trim();
 
   if (email && password) {
-    const response = await fetch('/api/users/login', {
+    const response = await fetch('/api/users/sign-in', {
       method: 'POST',
       body: JSON.stringify({ email, password }),
       headers: { 'Content-Type': 'application/json' },
@@ -14,7 +14,6 @@ const loginHandler = async (event) => {
 
     //If login is successful, redirect to the home page.
     if (response.ok) {
-      console.log("test")
       document.location.replace('/');
     } else {
       alert('Please check your email or password');
