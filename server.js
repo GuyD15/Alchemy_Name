@@ -11,8 +11,9 @@ const helpers = require('./utils/auth');
 
 // Create an instance of the Express app and set port for the server to listen on.
 const app = express();
-const PORT = process.env.PORT || 3001;
 require('dotenv').config();
+const PORT = process.env.PORT || 3001;
+
 
 if (
   !process.env.DB_USERNAME ||
