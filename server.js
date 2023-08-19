@@ -40,9 +40,13 @@ app.use(session(sess));
 
 const hbs = exphbs.create({});
 
+
+
 // Set Handlebars as the default template engine.
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+app.set('views', path.join(__dirname, '/Views')); 
+
 
 // Serving file from public directory and import routs from ./controllers
 app.use(express.json());
