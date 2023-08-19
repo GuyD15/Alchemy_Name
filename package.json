@@ -12,7 +12,6 @@
     "sqlite3": "^5.1.6"
   },
   "scripts": {
-    "start": "node server.js",
-    "seed": "/server.js"
+    "start": "node server.js"
   }
 }
