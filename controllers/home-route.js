@@ -32,7 +32,7 @@ router.get('/sign-in', (req, res) => {
     return;
   }
 
-  res.render('signin');
+  res.render('/sign-in');
 });
 
 module.exports = router;
