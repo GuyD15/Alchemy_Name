@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
           if (--timer < 0) {
               clearInterval(timerInterval);
+              dropZone.textContent = "Time's up!";
               document.body.__x.$data.timeOutNotification = true; // Show time out notification
           }
       }, 1000);
@@ -98,6 +99,15 @@ document.addEventListener('DOMContentLoaded', () => {
       totalScore += parseInt(draggedNumber);
       dropZone.textContent = totalScore;
 
+      const children = numberContainer.childNodes;
+      for (let i = 0; i < children.length; i++) {
+          const child = children[i];
+          if (child.textContent === draggedNumber) {
+              numberContainer.removeChild(child);
+              break;
+          }
+      }
+
       if (totalScore === targetNumber) {
           currentScore++;
           scoreDisplay.textContent = "Score: " + currentScore;
@@ -105,9 +115,12 @@ document.addEventListener('DOMContentLoaded', () => {
           document.body.__x.$data.timeOutNotification = false;
           resetRound();
       } else if (totalScore > targetNumber) {
+        dropZone.textContent = "You've exceeded the target score!";
           document.body.__x.$data.exceededNotification = true;
           clearInterval(timerInterval);
-          resetRound();
+          setTimeout(() => {
+            resetRound();
+          }, 3000);
       }
   });
 
