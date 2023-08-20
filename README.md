@@ -4,7 +4,7 @@ Quick Maffs is a web-based game that challenges players to reach a target number
 
 ## Play Online
 
-You can play the game online at [Quick Maffs on Heroku]. No installation needed.
+You can play the game online at [[Quick Maffs on Heroku]](https://quick-maffss-67a53315d3a3.herokuapp.com/sign-in). No installation needed.
 
 ## Local Installation
 
