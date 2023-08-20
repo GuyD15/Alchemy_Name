@@ -43,12 +43,29 @@
   cursor: pointer;
 }
 
-#reset-button:hover {
-  background-color: #26a9e0;
+
+.control-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
+
+#target-number {
+  font-family: 'Bubblegum Sans';
+  font-size: 30px;
+  background-color: transparent;
+  color: white;
+  border-radius: 30%;
+  padding: 10px 20px;
+}
+
+
+
+
 
 #score {
   font-family: 'Bubblegum Sans';font-size: 50px;
+  color: white;
 }
 
 #start-button {
@@ -66,6 +83,7 @@
 
 #timer {
   font-family: 'Bubblegum Sans';font-size: 50px;
+  color: white;
 }
 
 h1 {
@@ -83,4 +101,23 @@ h1 {
 
 body {
   background-color: darkgray;
+}
+
+@media (max-width: 768px) {
+  .drop-zone {
+    height: 50vh;
+    line-height: 50vh;
+  }
+  .draggable-number {
+    width: 20vw;
+    height: 20vw;
+    line-height: 20vw;
+  }
+  header {
+    font-size: 5vw;
+  }
+  #score,
+  #timer {
+    font-size: 4vw;
+  }
 }
